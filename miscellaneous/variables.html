@@ -1,0 +1,645 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>backend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">backend documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">기타</li>
+  <li class="breadcrumb-item">변수</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">색인</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#AuthUserJWT" title="src/utils/auth-user-jwt.decorator.ts" ><b>AuthUserJWT</b>&nbsp;&nbsp;&nbsp;(src/.../auth-user-jwt.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#config" title="src/config/index.ts" ><b>config</b>&nbsp;&nbsp;&nbsp;(src/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#editFileName" title="src/utils/upload-file.helper.ts" ><b>editFileName</b>&nbsp;&nbsp;&nbsp;(src/.../upload-file.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#FileUploadTypeSchema" title="src/utils/upload-file.helper.ts" ><b>FileUploadTypeSchema</b>&nbsp;&nbsp;&nbsp;(src/.../upload-file.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#fs" title="src/main.ts" ><b>fs</b>&nbsp;&nbsp;&nbsp;(src/.../main.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#InitArticles" title="prisma/seeds/articles.seed.ts" ><b>InitArticles</b>&nbsp;&nbsp;&nbsp;(prisma/.../articles.seed.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#InitUserRoles" title="prisma/seeds/user-role.seed.ts" ><b>InitUserRoles</b>&nbsp;&nbsp;&nbsp;(prisma/.../user-role.seed.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#InitUsers" title="prisma/seeds/user.seed.ts" ><b>InitUsers</b>&nbsp;&nbsp;&nbsp;(prisma/.../user.seed.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#prisma" title="prisma/seed.ts" ><b>prisma</b>&nbsp;&nbsp;&nbsp;(prisma/.../seed.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Roles" title="src/auth/roles.decorator.ts" ><b>Roles</b>&nbsp;&nbsp;&nbsp;(src/.../roles.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#UPLOADED_FILES_PATH" title="src/app.controller.ts" ><b>UPLOADED_FILES_PATH</b>&nbsp;&nbsp;&nbsp;(src/.../app.controller.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#USERROLES" title="src/utils/enum.ts" ><b>USERROLES</b>&nbsp;&nbsp;&nbsp;(src/.../enum.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/utils/auth-user-jwt.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AuthUserJWT"></a>
+                    <span class="name">
+                        <span ><b>AuthUserJWT</b></span>
+                        <a href="#AuthUserJWT"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>기본 값 : </i><code>createParamDecorator(
+  async (data: unknown, ctx: ExecutionContext) &#x3D;&gt; {
+    const request &#x3D; ctx.switchToHttp().getRequest();
+    const token &#x3D; request?.headers?.authorization?.split(&#x27; &#x27;)[1];
+    return token;
+  },
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/config/index.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="config"></a>
+                    <span class="name">
+                        <span ><b>config</b></span>
+                        <a href="#config"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>타입 : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>기본 값 : </i><code>{
+  port: parseInt(process.env.PORT, 10) || 6001,
+  env: process.env.NODE_ENV || Env.Dev,
+  appName: process.env.APP_NAME || undefined,
+  appGlobalPrefix: process.env.APP_GLOBAL_PREFIX || undefined,
+  enableSwagger: process.env.ENABLE_SWAGGER || false,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/utils/upload-file.helper.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editFileName"></a>
+                    <span class="name">
+                        <span ><b>editFileName</b></span>
+                        <a href="#editFileName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>기본 값 : </i><code>(req, file, callback) &#x3D;&gt; {
+  const name &#x3D; file.originalname.split(&#x27;.&#x27;)[0];
+  const fileExtName &#x3D; extname(file.originalname);
+  const randomName &#x3D; Array(4)
+    .fill(null)
+    .map(() &#x3D;&gt; Math.round(Math.random() * 16).toString(16))
+    .join(&#x27;&#x27;);
+  const timestamp &#x3D; new Date().getTime();
+  callback(null, &#x60;${name}-${randomName}-${timestamp}${fileExtName}&#x60;);
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="FileUploadTypeSchema"></a>
+                    <span class="name">
+                        <span ><b>FileUploadTypeSchema</b></span>
+                        <a href="#FileUploadTypeSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>타입 : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>기본 값 : </i><code>{
+  type: &#x27;object&#x27;,
+  properties: {
+    file: {
+      type: &#x27;string&#x27;,
+      format: &#x27;binary&#x27;,
+    },
+  },
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/main.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fs"></a>
+                    <span class="name">
+                        <span ><b>fs</b></span>
+                        <a href="#fs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>기본 값 : </i><code>require(&#x27;fs&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>prisma/seeds/articles.seed.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="InitArticles"></a>
+                    <span class="name">
+                        <span ><b>InitArticles</b></span>
+                        <a href="#InitArticles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>기본 값 : </i><code>async (prismaClient: any) &#x3D;&gt; {
+  await prismaClient.article.upsert({
+    where: { title: &#x27;The best Nestjs developer in the world,Asad&#x27; },
+    update: {},
+    create: {
+      title: &#x27;The best Nestjs developer in the world,Asad&#x27;,
+      body: &#x27;Support by reading his articles and giving him feedbacks&#x27;,
+      description:
+        &quot;We are excited to share that today&#x27;s he is going to realise his new article&quot;,
+      published: true,
+    },
+  });
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>prisma/seeds/user-role.seed.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="InitUserRoles"></a>
+                    <span class="name">
+                        <span ><b>InitUserRoles</b></span>
+                        <a href="#InitUserRoles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>기본 값 : </i><code>async (prismaClient: any) &#x3D;&gt; {
+  await prismaClient.user_role.upsert({
+    where: { id: 1 },
+    update: {},
+    create: { id: 1, roleName: &#x27;SUPERADMIN&#x27; },
+  });
+  await prismaClient.user_role.upsert({
+    where: { id: 2 },
+    update: {},
+    create: { id: 2, roleName: &#x27;ADMIN&#x27; },
+  });
+  await prismaClient.user_role.upsert({
+    where: { id: 3 },
+    update: {},
+    create: { id: 3, roleName: &#x27;USER&#x27; },
+  });
+  await prismaClient.user_role.upsert({
+    where: { id: 4 },
+    update: {},
+    create: { id: 4, roleName: &#x27;Other&#x27; },
+  });
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>prisma/seeds/user.seed.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="InitUsers"></a>
+                    <span class="name">
+                        <span ><b>InitUsers</b></span>
+                        <a href="#InitUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>기본 값 : </i><code>async (prismaClient: any) &#x3D;&gt; {
+  // Create Admin account
+  await prismaClient.user.upsert({
+    where: { id: 1 },
+    update: {},
+    create: {
+      firstName: &#x27;Admin&#x27;,
+      lastName: &#x27;Admin&#x27;,
+      email: &#x27;admin@gmail.com&#x27;,
+      password: &#x27;$2b$10$bdS87oU/IB8un3x.hkJ4COISd2ixNNcb2bddl2rIjMNS2xJvpkHDu&#x27;, // 123456789
+      roleId: 2,
+      verified: true,
+    },
+  });
+
+  // Create Provider account
+  await prismaClient.user.upsert({
+    where: { id: 2 },
+    update: {},
+    create: {
+      firstName: &#x27;Foulen&#x27;,
+      lastName: &#x27;Fouleni&#x27;,
+      email: &#x27;provider@gmail.com&#x27;,
+      password: &#x27;$2b$10$bdS87oU/IB8un3x.hkJ4COISd2ixNNcb2bddl2rIjMNS2xJvpkHDu&#x27;, // 123456789
+      roleId: 3,
+      verified: true,
+    },
+  });
+
+  // Create other Verified account
+  await prismaClient.user.upsert({
+    where: { id: 3 },
+    update: {},
+    create: {
+      firstName: &#x27;Tr&#x27;,
+      lastName: &#x27;Other&#x27;,
+      email: &#x27;other@gmail.com&#x27;,
+      password: &#x27;$2b$10$bdS87oU/IB8un3x.hkJ4COISd2ixNNcb2bddl2rIjMNS2xJvpkHDu&#x27;, // 123456789
+      roleId: 4,
+      verified: true,
+    },
+  });
+
+  // Create other Not Verified account
+  await prismaClient.user.upsert({
+    where: { id: 4 },
+    update: {},
+    create: {
+      firstName: &#x27;Tr&#x27;,
+      lastName: &#x27;Other 2&#x27;,
+      email: &#x27;other2@gmail.com&#x27;,
+      password: &#x27;$2b$10$bdS87oU/IB8un3x.hkJ4COISd2ixNNcb2bddl2rIjMNS2xJvpkHDu&#x27;, // 123456789
+      roleId: 4,
+      verified: false,
+    },
+  });
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>prisma/seed.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prisma"></a>
+                    <span class="name">
+                        <span ><b>prisma</b></span>
+                        <a href="#prisma"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>기본 값 : </i><code>new PrismaClient()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/auth/roles.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Roles"></a>
+                    <span class="name">
+                        <span ><b>Roles</b></span>
+                        <a href="#Roles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>기본 값 : </i><code>(...roles: number[]) &#x3D;&gt; SetMetadata(&#x27;roles&#x27;, roles)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app.controller.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="UPLOADED_FILES_PATH"></a>
+                    <span class="name">
+                        <span ><b>UPLOADED_FILES_PATH</b></span>
+                        <a href="#UPLOADED_FILES_PATH"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>타입 : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>기본 값 : </i><code>&#x27;./uploadedFiles&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/utils/enum.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="USERROLES"></a>
+                    <span class="name">
+                        <span ><b>USERROLES</b></span>
+                        <a href="#USERROLES"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>타입 : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>기본 값 : </i><code>{
+  superadmin: { id: 1, roleName: &#x27;SUPERADMIN&#x27; },
+  admin: { id: 2, roleName: &#x27;ADMIN&#x27; },
+  user: { id: 3, roleName: &#x27;USER&#x27; },
+  other: { id: 4, roleName: &#x27;Other&#x27; },
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> 개의 결과가 일치했습니다 "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">검색 결과가 없습니다 "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
