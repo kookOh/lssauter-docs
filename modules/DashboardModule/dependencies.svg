@@ -24,43 +24,43 @@
 <title>cluster_DashboardModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="89,-70 89,-195 407,-195 407,-70 89,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_DashboardModule_imports</title>
-<polygon fill="none" stroke="black" points="285,-78 285,-130 399,-130 399,-78 285,-78"/>
-</g>
 <g id="clust6" class="cluster">
 <title>cluster_DashboardModule_providers</title>
-<polygon fill="none" stroke="black" points="97,-78 97,-130 277,-130 277,-78 97,-78"/>
+<polygon fill="none" stroke="black" points="219,-78 219,-130 399,-130 399,-78 219,-78"/>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_DashboardModule_imports</title>
+<polygon fill="none" stroke="black" points="97,-78 97,-130 211,-130 211,-78 97,-78"/>
 </g>
 <!-- PrismaModule -->
 <g id="node1" class="node">
 <title>PrismaModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="391.43,-122 388.43,-126 367.43,-126 364.43,-122 292.57,-122 292.57,-86 391.43,-86 391.43,-122"/>
-<text text-anchor="middle" x="342" y="-99.8" font-family="Times,serif" font-size="14.00">PrismaModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="203.43,-122 200.43,-126 179.43,-126 176.43,-122 104.57,-122 104.57,-86 203.43,-86 203.43,-122"/>
+<text text-anchor="middle" x="154" y="-99.8" font-family="Times,serif" font-size="14.00">PrismaModule</text>
 </g>
 <!-- DashboardModule -->
 <g id="node2" class="node">
 <title>DashboardModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="323.19,-187 320.19,-191 299.19,-191 296.19,-187 202.81,-187 202.81,-151 323.19,-151 323.19,-187"/>
-<text text-anchor="middle" x="263" y="-164.8" font-family="Times,serif" font-size="14.00">DashboardModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="293.19,-187 290.19,-191 269.19,-191 266.19,-187 172.81,-187 172.81,-151 293.19,-151 293.19,-187"/>
+<text text-anchor="middle" x="233" y="-164.8" font-family="Times,serif" font-size="14.00">DashboardModule</text>
 </g>
 <!-- PrismaModule&#45;&gt;DashboardModule -->
 <g id="edge1" class="edge">
 <title>PrismaModule&#45;&gt;DashboardModule</title>
-<path fill="none" stroke="black" d="M307.94,-122.11C307.94,-122.11 307.94,-140.99 307.94,-140.99"/>
-<polygon fill="black" stroke="black" points="304.44,-140.99 307.94,-150.99 311.44,-140.99 304.44,-140.99"/>
+<path fill="none" stroke="black" d="M188.06,-122.11C188.06,-122.11 188.06,-140.99 188.06,-140.99"/>
+<polygon fill="black" stroke="black" points="184.56,-140.99 188.06,-150.99 191.56,-140.99 184.56,-140.99"/>
 </g>
 <!-- DashboardService -->
 <g id="node3" class="node">
 <title>DashboardService</title>
-<ellipse fill="#fdb462" stroke="black" cx="187" cy="-104" rx="81.64" ry="18"/>
-<text text-anchor="middle" x="187" y="-99.8" font-family="Times,serif" font-size="14.00">DashboardService</text>
+<ellipse fill="#fdb462" stroke="black" cx="309" cy="-104" rx="81.64" ry="18"/>
+<text text-anchor="middle" x="309" y="-99.8" font-family="Times,serif" font-size="14.00">DashboardService</text>
 </g>
 <!-- DashboardService&#45;&gt;DashboardModule -->
 <g id="edge2" class="edge">
 <title>DashboardService&#45;&gt;DashboardModule</title>
-<path fill="none" stroke="black" d="M235.86,-118.75C235.86,-118.75 235.86,-140.59 235.86,-140.59"/>
-<polygon fill="black" stroke="black" points="232.36,-140.59 235.86,-150.59 239.36,-140.59 232.36,-140.59"/>
+<path fill="none" stroke="black" d="M260.14,-118.75C260.14,-118.75 260.14,-140.59 260.14,-140.59"/>
+<polygon fill="black" stroke="black" points="256.64,-140.59 260.14,-150.59 263.64,-140.59 256.64,-140.59"/>
 </g>
 </g>
 </svg>
